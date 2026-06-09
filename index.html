@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<title>Menu</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    min-height:100vh;
+    background:#1d1515;
+}
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+}
+
+.menu-container{
+    width:100%;
+    max-width:768px;
+}
+
+.menu-image{
+    display:block;
+    width:100%;
+    height:auto;
+}
+
+/* WhatsApp Share Button */
+.share-btn{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:white;
+    text-decoration:none;
+    padding:14px 20px;
+    border-radius:50px;
+    font-family:Arial, sans-serif;
+    font-size:14px;
+    font-weight:bold;
+    box-shadow:0 4px 12px rgba(0,0,0,0.3);
+    z-index:1000;
+    transition:all 0.2s ease;
+}
+
+.share-btn:hover{
+    background:#1ebe5d;
+    transform:translateY(-2px);
+}
+
+@media (max-width:480px){
+    .share-btn{
+        bottom:15px;
+        right:15px;
+        padding:12px 16px;
+        font-size:13px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="menu-container">
+    <img
+        src="YUMMY.png"
+        alt="Our Menu"
+        class="menu-image">
+</div>
+
+<a href="#" class="share-btn" id="whatsappShare">
+    Share on WhatsApp
+</a>
+
+<script>
+document.getElementById('whatsappShare').addEventListener('click', function(e) {
+    e.preventDefault();
+
+    const menuUrl = "https://rf1sys.github.io/menudemo/";
+    const message = "Check out our menu: " + menuUrl;
+
+    window.open(
+        "https://wa.me/?text=" + encodeURIComponent(message),
+        "_blank"
+    );
+});
+</script>
+
+</body>
+</html>
